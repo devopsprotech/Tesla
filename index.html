@@ -269,7 +269,7 @@
                 <h3 class="card-title">Иммерсивные дисплеи</h3>
                 <p class="card-description">
                   17-дюймовый сенсорный экран с антибликовым покрытием и кинематографическим
-                  разрешением обеспечивает интуитивное управление всеми системами и доступ к медиа.
+                  разрешением обеспечивает интуитивное управление всеми системами и доступ к медиа!
                 </p>
               </article>
 
@@ -290,68 +290,34 @@
               </article>
             </div>
 
-            <!-- Интерактивный просмотр салона по рядам -->
+            <!-- Видеодемонстрация бортового дисплея и функционала салона -->
             <div class="interior-interactive-block reveal-on-scroll">
-              <span class="edu-badge" style="display: none;">JavaScript — плавное переключение слоёв изображений (crossfade)</span>
+              <span class="edu-badge" style="display: none;">HTML5 Video — широкоформатный кинематографический плеер с аппаратным ускорением</span>
               <div class="viewer-header">
                 <div>
-                  <h3 class="card-title" style="margin-bottom: 4px;">Интерактивный обзор салона</h3>
-                  <p class="section-body-text">Выберите интересующий ряд сидений для детального ознакомления:</p>
-                </div>
-                <div class="segmented-control" role="tablist" aria-label="Выбор ряда сидений">
-                  <button
-                    type="button"
-                    class="segment-btn active"
-                    data-row-target="front"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    Передний ряд
-                  </button>
-                  <button
-                    type="button"
-                    class="segment-btn"
-                    data-row-target="second"
-                    role="tab"
-                    aria-selected="false"
-                  >
-                    Второй ряд
-                  </button>
-                  <button
-                    type="button"
-                    class="segment-btn"
-                    data-row-target="third"
-                    role="tab"
-                    aria-selected="false"
-                  >
-                    Третий ряд
-                  </button>
+                  <h3 class="card-title" style="margin-bottom: 4px;">Бортовой дисплей и трансформация салона</h3>
+                  <p class="section-body-text">Интуитивное сенсорное управление мультимедиа, климатом и гибкая конфигурация пространства:</p>
                 </div>
               </div>
 
-              <div class="viewer-stage" aria-live="polite">
-                <img
-                  src="./assets/images/interior-front.jpg"
-                  alt="Передний ряд салона и панель приборов"
-                  data-row-view="front"
-                  class="active"
-                />
-                <img
-                  src="./assets/images/interior-second-row.jpg"
-                  alt="Второй ряд представительских кресел"
-                  data-row-view="second"
-                />
-                <img
-                  src="./assets/images/interior-front.jpg"
-                  alt="Третий ряд сидений и багажное пространство"
-                  data-row-view="third"
-                />
+              <div class="interior-video-wrapper">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                  class="interior-wide-video"
+                  aria-label="Видео демонстрации бортового дисплея и практичности салона"
+                >
+                  <source src="https://res.cloudinary.com/o4ajauja/video/upload/v1791261039/Model-X-New-Utility-Tablet-NA.webm" type="video/webm" />
+                  Ваш браузер не поддерживает воспроизведение видео.
+                </video>
               </div>
 
-              <div class="viewer-info-panel">
+              <div class="viewer-info-panel" style="margin-top: 18px;">
                 <p class="viewer-info-panel-text">
-                  Передний ряд: Панорамное ветровое стекло, эргономичный штурвал управления и
-                  17-дюймовый сенсорный кинематографический дисплей с разрешением 2200×1300.
+                  Широкоформатный 17-дюймовый сенсорный дисплей с разрешением 2200×1300 и мгновенной регулировкой параметров салона и складывания сидений.
                 </p>
               </div>
             </div>
@@ -695,50 +661,6 @@
                   decoding="async"
                 />
               </div>
-            </div>
-
-            <!-- Интерактивная демонстрация открывания дверей -->
-            <div class="falcon-interactive-container reveal-on-scroll">
-              <span class="edu-badge" style="display: none;">CSS Transform & Keyframes — аппаратная GPU-анимация створок дверей</span>
-              <h3 class="card-title">Интерактивная кинематика дверей</h3>
-              <p class="section-body-text" style="max-width: 580px;">
-                Нажмите кнопку ниже, чтобы увидеть анимацию подъёма двухшарнирных дверей:
-              </p>
-
-              <!-- SVG демонстрация силуэта автомобиля с открывающимися дверьми -->
-              <svg
-                class="falcon-stage-svg"
-                viewBox="0 0 600 260"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Схема подъёмных дверей автомобиля"
-              >
-                <!-- Контур крыши и кузова -->
-                <path d="M120 200 L200 130 L400 130 L480 200 Z" stroke="#33333b" stroke-width="3" fill="#141418" />
-                <rect x="180" y="200" width="240" height="40" rx="4" fill="#1e1e24" stroke="#444" stroke-width="2" />
-                <!-- Колёса -->
-                <circle cx="160" cy="225" r="28" fill="#0d0d10" stroke="#555" stroke-width="4" />
-                <circle cx="440" cy="225" r="28" fill="#0d0d10" stroke="#555" stroke-width="4" />
-                <!-- Левая подъёмная створка -->
-                <g class="falcon-door-left">
-                  <path d="M210 130 L290 130 L280 195 L220 195 Z" fill="#2d3748" stroke="#60a5fa" stroke-width="3" />
-                  <line x1="220" y1="145" x2="280" y2="145" stroke="#93c5fd" stroke-width="2" />
-                </g>
-                <!-- Правая подъёмная створка -->
-                <g class="falcon-door-right">
-                  <path d="M310 130 L390 130 L380 195 L320 195 Z" fill="#2d3748" stroke="#60a5fa" stroke-width="3" />
-                  <line x1="320" y1="145" x2="380" y2="145" stroke="#93c5fd" stroke-width="2" />
-                </g>
-                <text x="300" y="250" text-anchor="middle" fill="#888" font-size="12">Интерактивный образовательный макет</text>
-              </svg>
-
-              <button
-                type="button"
-                class="falcon-action-btn"
-                aria-expanded="false"
-              >
-                ОТКРЫТЬ ДВЕРИ
-              </button>
             </div>
           </div>
         </section>

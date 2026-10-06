@@ -2,5 +2,7 @@
   "name": "Модель X — Образовательный концепт",
   "description": "Образовательный концепт веб-сайта электрического кроссовера в стиле Tesla Model X, реализованный на чистом HTML5, CSS3 и JavaScript.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

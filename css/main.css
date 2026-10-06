@@ -594,7 +594,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Интерактивный просмотр салона (Interior View Viewer) */
+/* Интерактивный просмотр салона и видеодемонстрация (Interior View & Video Showcase) */
 .interior-interactive-block {
   background-color: var(--color-bg-surface);
   border: 1px solid var(--color-border);
@@ -602,6 +602,25 @@
   padding: 32px;
   margin-top: 48px;
 }
+
+.interior-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.interior-wide-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 .viewer-header {
   display: flex;
