@@ -1,0 +1,242 @@
+/* ==========================================================================
+   RESPONSIVE.CSS — Адаптивные стили для всех типов экранов
+   Образовательный проект: Модель X
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ЭКРАНЫ МЕНЕЕ 1200px (Десктопы средних размеров и горизонтальные планшеты)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .intro-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .config-container-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ЭКРАНЫ МЕНЕЕ 1024px (Планшеты)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 58px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .interior-cards-grid,
+  .tech-cards-grid,
+  .safety-blocks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .config-container-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .config-preview-panel {
+    position: static;
+  }
+
+  .exterior-feature-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .exterior-feature-row.reverse {
+    direction: ltr;
+  }
+
+  .utility-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .charging-container-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ЭКРАНЫ МЕНЕЕ 768px (Мобильные устройства и вертикальные планшеты)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 90px 16px 36px;
+  }
+
+  .hero-buttons-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .interior-cards-grid,
+  .tech-cards-grid,
+  .safety-blocks-grid,
+  .perf-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .interior-banner-overlay {
+    padding: 24px;
+  }
+
+  .viewer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .segmented-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .segment-btn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px;
+  }
+
+  .options-button-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .charging-controls-row {
+    flex-wrap: wrap;
+  }
+
+  .charging-control-btn {
+    flex: 1 1 45%;
+  }
+
+  .modal-dialog {
+    max-height: 96vh;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 16px 20px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .modal-btn-row {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ЭКРАНЫ МЕНЕЕ 480px (Компактные смартфоны)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  .btn-header-cta {
+    display: none;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .spec-number {
+    font-size: 40px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .swatches-row {
+    justify-content: space-between;
+  }
+
+  .swatch-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ЭКРАНЫ МЕНЕЕ 360px (Сверхкомпактные устройства)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .hero-heading {
+    font-size: 32px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .falcon-stage-svg {
+    height: 200px;
+  }
+}

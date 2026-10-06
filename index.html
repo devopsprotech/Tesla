@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модель X — Образовательный концепт электромобиля</title>
+    <meta
+      name="description"
+      content="Образовательный проект веб-интерфейса премиального электрического SUV в стиле Tesla Model X, созданный на чистом HTML5, CSS3 и Vanilla JavaScript."
+    />
+    <meta property="og:title" content="Модель X — Образовательный концепт электромобиля" />
+    <meta
+      property="og:description"
+      content="Интерактивная демонстрация современных веб-технологий, плавной анимации и адаптивного дизайна в автомобильном интерфейсе."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Стили проекта -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <!-- ==================================================================
+           ШАПКА И НАВИГАЦИЯ (HEADER)
+           ================================================================== -->
+      <header class="site-header" role="banner">
+        <div class="header-container">
+          <!-- Левая зона: Логотип / Название модели -->
+          <div class="header-brand">
+            <a href="#" class="brand-title" aria-label="Модель X — На главную страницу">
+              МОДЕЛЬ X
+            </a>
+          </div>
+
+          <!-- Центральная зона: Навигация десктопа -->
+          <nav class="desktop-nav" role="navigation" aria-label="Основная навигация">
+            <a href="#overview" class="nav-link">Обзор</a>
+            <a href="#interior" class="nav-link">Интерьер</a>
+            <a href="#performance" class="nav-link">Производительность</a>
+            <a href="#utility" class="nav-link">Практичность</a>
+            <a href="#technology" class="nav-link">Технологии</a>
+          </nav>
+
+          <!-- Правая зона: Кнопки действий -->
+          <div class="header-actions">
+            <button
+              type="button"
+              class="edu-toggle-btn"
+              aria-pressed="false"
+              title="Включить пояснения веб-технологий"
+            >
+              Режим обучения
+            </button>
+            <a href="#overview" class="nav-link desktop-only">Подробнее</a>
+            <button
+              type="button"
+              class="btn-header-cta"
+              data-open-modal="configurator"
+              aria-label="Открыть конфигуратор автомобиля"
+            >
+              Настроить автомобиль
+            </button>
+
+            <!-- Кнопка мобильного меню -->
+            <button
+              type="button"
+              class="mobile-menu-toggle"
+              aria-label="Открыть меню навигации"
+              aria-expanded="false"
+              aria-controls="mobileDrawer"
+            >
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Мобильное выпадающее меню -->
+      <div class="mobile-drawer-backdrop" aria-hidden="true"></div>
+      <aside id="mobileDrawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-label="Мобильное меню">
+        <div>
+          <button type="button" class="mobile-drawer-close" aria-label="Закрыть меню">✕</button>
+          <div class="brand-title" style="margin-bottom: 32px;">МОДЕЛЬ X</div>
+          <nav class="mobile-nav-list" role="navigation">
+            <a href="#overview" class="mobile-nav-link">Обзор</a>
+            <a href="#interior" class="mobile-nav-link">Интерьер</a>
+            <a href="#performance" class="mobile-nav-link">Производительность</a>
+            <a href="#utility" class="mobile-nav-link">Практичность</a>
+            <a href="#technology" class="mobile-nav-link">Технологии</a>
+            <a href="#charging" class="mobile-nav-link">Зарядка</a>
+            <a href="#safety" class="mobile-nav-link">Безопасность</a>
+          </nav>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="btn-primary"
+            style="width: 100%; max-width: 100%;"
+            data-open-modal="configurator"
+          >
+            НАСТРОИТЬ АВТОМОБИЛЬ
+          </button>
+        </div>
+      </aside>
+
+      <main id="mainContent">
+        <!-- ==================================================================
+             ГЛАВНЫЙ ЭКРАН (HERO SECTION)
+             ================================================================== -->
+        <section class="hero-section" aria-label="Главная презентация модели">
+          <div class="hero-media-wrapper">
+            <img
+              src="./assets/images/hero.jpg"
+              alt="Электрический кроссовер Модель X в современном архитектурном павильоне"
+              class="hero-image"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="hero-scrim"></div>
+
+          <div class="hero-content">
+            <div class="hero-title-group hero-animate-in">
+              <span class="edu-badge" style="display: none;">HTML — семантическая структура первого экрана</span>
+              <p class="hero-kicker">МОДЕЛЬ X</p>
+              <h1 class="hero-heading">БУДУЩЕЕ ЭЛЕКТРИЧЕСКИХ SUV</h1>
+              <p class="hero-subheading">
+                Электрический автомобиль нового поколения с впечатляющей динамикой, просторным
+                интерьером и передовыми технологиями.
+              </p>
+            </div>
+
+            <div class="hero-actions-container hero-actions-group hero-animate-in">
+              <div class="hero-buttons-row">
+                <button
+                  type="button"
+                  class="btn-primary"
+                  data-scroll-to="#specs"
+                  aria-label="Перейти к подробным характеристикам"
+                >
+                  УЗНАТЬ БОЛЬШЕ
+                </button>
+                <button
+                  type="button"
+                  class="btn-secondary"
+                  data-open-modal="configurator"
+                  aria-label="Открыть конфигуратор автомобиля"
+                >
+                  НАСТРОИТЬ АВТОМОБИЛЬ
+                </button>
+              </div>
+
+              <div class="hero-scroll-indicator" aria-hidden="true">
+                <span class="scroll-indicator-arrow">↓</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ПАНЕЛЬ ХАРАКТЕРИСТИК (SPECIFICATION BAR)
+             ================================================================== -->
+        <section id="specs" class="specs-section" aria-label="Технические характеристики">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">IntersectionObserver — анимация счётчиков один раз при попадании в экран</span>
+            <div class="specs-grid">
+              <div class="spec-item reveal-on-scroll">
+                <div class="spec-value-container">
+                  <span class="spec-number" data-counter-target="352">0</span>
+                  <span class="spec-unit">миль</span>
+                </div>
+                <span class="spec-label">Запас хода</span>
+              </div>
+
+              <div class="spec-item reveal-on-scroll delay-100">
+                <div class="spec-value-container">
+                  <span class="spec-number" data-counter-target="2.5">0</span>
+                  <span class="spec-unit">сек</span>
+                </div>
+                <span class="spec-label">0–60 миль/ч</span>
+              </div>
+
+              <div class="spec-item reveal-on-scroll delay-200">
+                <div class="spec-value-container">
+                  <span class="spec-number" data-counter-target="7">0</span>
+                  <span class="spec-unit">мест</span>
+                </div>
+                <span class="spec-label">Вместимость</span>
+              </div>
+
+              <div class="spec-item reveal-on-scroll delay-300">
+                <div class="spec-value-container">
+                  <span class="spec-number">AWD</span>
+                </div>
+                <span class="spec-label">Полный привод</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ВВОДНЫЙ БЛОК (INTRODUCTION SECTION)
+             ================================================================== -->
+        <section id="overview" class="intro-section" aria-label="Обзор концепта">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">CSS Grid — двухколоночная раскладка со сбалансированным текстом</span>
+            <div class="intro-grid">
+              <div class="intro-text-column reveal-on-scroll">
+                <p class="section-kicker">ОБЗОР АВТОМОБИЛЯ</p>
+                <h2 class="section-heading-large">СОЗДАН ДЛЯ БУДУЩЕГО</h2>
+                <p class="section-lead-text">
+                  Модель X совмещает непревзойдённую вместительность семейного кроссовера и
+                  динамику гиперкара. Каждая деталь спроектирована для максимальной
+                  энергетической эффективности и комфорта пассажиров.
+                </p>
+                <p class="section-body-text">
+                  Архитектура силовой установки с двумя независимыми электромоторами мгновенно
+                  распределяет крутящий момент между осями, обеспечивая абсолютный контроль на любом
+                  покрытии в любых погодных условиях.
+                </p>
+              </div>
+
+              <div class="intro-media-column reveal-on-scroll delay-200">
+                <img
+                  src="./assets/images/exterior-falcon.jpg"
+                  alt="Электромобиль Модель X с открытыми дверями Falcon Wing"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ИНТЕРЬЕР И ГАЛЕРЕЯ (INTERIOR SECTION)
+             ================================================================== -->
+        <section id="interior" class="interior-section" aria-label="Интерьер и комфорт">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">CSS Flexbox + Карточки с hover-подъёмом и доступная галерея</span>
+            <div class="interior-hero-banner reveal-on-scroll">
+              <img
+                src="./assets/images/interior-front.jpg"
+                alt="Панорамный салон электромобиля с центральным кинематографическим дисплеем"
+                class="interior-banner-image"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="interior-banner-overlay">
+                <p class="section-kicker">ПРОСТРАНСТВО САЛОНА</p>
+                <h2 class="section-heading-large">ИНТЕРЬЕР НОВОГО ПОКОЛЕНИЯ</h2>
+                <p class="section-lead-text" style="max-width: 680px;">
+                  Минималистичная кабина без лишних механических переключателей. Панорамное
+                  остекление открывает безграничный обзор дороги и неба.
+                </p>
+              </div>
+            </div>
+
+            <!-- Три карточки особенностей -->
+            <div class="interior-cards-grid">
+              <article class="interior-feature-card reveal-on-scroll">
+                <h3 class="card-title">Иммерсивные дисплеи</h3>
+                <p class="card-description">
+                  17-дюймовый сенсорный экран с антибликовым покрытием и кинематографическим
+                  разрешением обеспечивает интуитивное управление всеми системами и доступ к медиа.
+                </p>
+              </article>
+
+              <article class="interior-feature-card reveal-on-scroll delay-100">
+                <h3 class="card-title">Премиальный комфорт</h3>
+                <p class="card-description">
+                  Трёхзонный климат-контроль с системой фильтрации медицинского класса,
+                  вентилируемые кресла и активное шумоподавление в салоне.
+                </p>
+              </article>
+
+              <article class="interior-feature-card reveal-on-scroll delay-200">
+                <h3 class="card-title">Подключённый опыт</h3>
+                <p class="card-description">
+                  Беспроводная быстрая зарядка для нескольких смартфонов, порты USB-C мощностью
+                  до 36 Вт и многоканальная аудиосистема с 22 динамиками.
+                </p>
+              </article>
+            </div>
+
+            <!-- Интерактивный просмотр салона по рядам -->
+            <div class="interior-interactive-block reveal-on-scroll">
+              <span class="edu-badge" style="display: none;">JavaScript — плавное переключение слоёв изображений (crossfade)</span>
+              <div class="viewer-header">
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 4px;">Интерактивный обзор салона</h3>
+                  <p class="section-body-text">Выберите интересующий ряд сидений для детального ознакомления:</p>
+                </div>
+                <div class="segmented-control" role="tablist" aria-label="Выбор ряда сидений">
+                  <button
+                    type="button"
+                    class="segment-btn active"
+                    data-row-target="front"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    Передний ряд
+                  </button>
+                  <button
+                    type="button"
+                    class="segment-btn"
+                    data-row-target="second"
+                    role="tab"
+                    aria-selected="false"
+                  >
+                    Второй ряд
+                  </button>
+                  <button
+                    type="button"
+                    class="segment-btn"
+                    data-row-target="third"
+                    role="tab"
+                    aria-selected="false"
+                  >
+                    Третий ряд
+                  </button>
+                </div>
+              </div>
+
+              <div class="viewer-stage" aria-live="polite">
+                <img
+                  src="./assets/images/interior-front.jpg"
+                  alt="Передний ряд салона и панель приборов"
+                  data-row-view="front"
+                  class="active"
+                />
+                <img
+                  src="./assets/images/interior-second-row.jpg"
+                  alt="Второй ряд представительских кресел"
+                  data-row-view="second"
+                />
+                <img
+                  src="./assets/images/interior-front.jpg"
+                  alt="Третий ряд сидений и багажное пространство"
+                  data-row-view="third"
+                />
+              </div>
+
+              <div class="viewer-info-panel">
+                <p class="viewer-info-panel-text">
+                  Передний ряд: Панорамное ветровое стекло, эргономичный штурвал управления и
+                  17-дюймовый сенсорный кинематографический дисплей с разрешением 2200×1300.
+                </p>
+              </div>
+            </div>
+
+            <!-- Карусель галереи с кнопками и точками -->
+            <div class="gallery-wrapper reveal-on-scroll">
+              <span class="edu-badge" style="display: none;">Vanilla JS Gallery — обработка кликов, клавиатурных стрелок и свайпов</span>
+              <div class="gallery-stage" tabindex="0" role="region" aria-label="Галерея интерьера">
+                <div class="gallery-slide active">
+                  <img src="./assets/images/interior-front.jpg" alt="Интерьер: Центральный дисплей и водительское место" />
+                  <div class="gallery-caption">1 / 3 — Цифровой кокпит и панорамное остекление</div>
+                </div>
+                <div class="gallery-slide">
+                  <img src="./assets/images/interior-second-row.jpg" alt="Интерьер: Второй ряд кресел повышенного комфорта" />
+                  <div class="gallery-caption">2 / 3 — Раздельные представительские кресла второго ряда</div>
+                </div>
+                <div class="gallery-slide">
+                  <img src="./assets/images/exterior-falcon.jpg" alt="Интерьер: Вид с открытыми дверями" />
+                  <div class="gallery-caption">3 / 3 — Удобная посадка благодаря подъёмным дверям</div>
+                </div>
+
+                <button type="button" class="gallery-btn-prev" aria-label="Предыдущее изображение">‹</button>
+                <button type="button" class="gallery-btn-next" aria-label="Следующее изображение">›</button>
+              </div>
+
+              <div class="gallery-dots" role="tablist" aria-label="Индикаторы слайдов">
+                <button type="button" class="gallery-dot active" aria-label="Перейти к слайду 1" aria-selected="true"></button>
+                <button type="button" class="gallery-dot" aria-label="Перейти к слайду 2" aria-selected="false"></button>
+                <button type="button" class="gallery-dot" aria-label="Перейти к слайду 3" aria-selected="false"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ПРОИЗВОДИТЕЛЬНОСТЬ (PERFORMANCE SECTION)
+             ================================================================== -->
+        <section id="performance" class="perf-section" aria-label="Динамика и силовая установка">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">CSS анимация полосы ускорения и табулярные цифры</span>
+            <p class="section-kicker">ДИНАМИЧЕСКИЕ ХАРАКТЕРИСТИКИ</p>
+            <h2 class="section-heading-large">МГНОВЕННАЯ МОЩНОСТЬ</h2>
+            <p class="section-lead-text" style="max-width: 640px;">
+              Электрическая силовая передача обеспечивает мгновенный отклик на педаль акселератора
+              без задержек на переключение передач и потери тяги.
+            </p>
+
+            <div class="perf-grid">
+              <div class="perf-stat-card reveal-on-scroll">
+                <div class="perf-stat-value">2.5 сек</div>
+                <div class="perf-stat-label">Разгон 0–60 миль/ч</div>
+              </div>
+
+              <div class="perf-stat-card reveal-on-scroll delay-100">
+                <div class="perf-stat-value">352 мили</div>
+                <div class="perf-stat-label">Запас хода (EPA)</div>
+              </div>
+
+              <div class="perf-stat-card reveal-on-scroll delay-200">
+                <div class="perf-stat-value">1 020 л.с.</div>
+                <div class="perf-stat-label">Пиковая мощность</div>
+              </div>
+            </div>
+
+            <!-- Визуализация разгона -->
+            <div class="perf-visualizer reveal-on-scroll">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Шкала динамики ускорения</span>
+                <span style="font-size: 13px; color: var(--color-text-muted);">0 → 100 км/ч за 2.6 сек</span>
+              </div>
+              <div class="perf-bar-track" aria-hidden="true">
+                <div class="perf-bar-fill"></div>
+              </div>
+              <div class="perf-markers">
+                <span>0 км/ч</span>
+                <span>50 км/ч</span>
+                <span>100 км/ч</span>
+                <span>Макс. 262 км/ч</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             КОНФИГУРАТОР АВТОМОБИЛЯ (VEHICLE COLOR CONFIGURATOR)
+             ================================================================== -->
+        <section id="configurator" class="config-section" aria-label="Конфигуратор автомобиля">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">JavaScript State Management — синхронизация выбора цвета, дисков и сидений</span>
+            <p class="section-kicker">ПЕРСОНАЛИЗАЦИЯ</p>
+            <h2 class="section-heading-large">НАСТРОЙТЕ СВОЙ АВТОМОБИЛЬ</h2>
+
+            <div class="config-container-grid">
+              <!-- Левая колонка: Просмотр автомобиля с живым фильтром -->
+              <div class="config-preview-panel">
+                <div class="config-image-container">
+                  <img
+                    src="./assets/images/hero.jpg"
+                    alt="Предварительный просмотр выбранной конфигурации Модель X"
+                    class="config-vehicle-img filter-white"
+                  />
+                </div>
+              </div>
+
+              <!-- Правая колонка: Органы управления -->
+              <div class="config-controls-panel">
+                <!-- Выбор цвета кузова -->
+                <div>
+                  <h3 class="config-group-title">Цвет кузова</h3>
+                  <p class="config-group-subtitle">
+                    Выбран цвет: <strong class="active-color-name-display">Перламутровый белый</strong>
+                  </p>
+                  <div class="swatches-row" role="radiogroup" aria-label="Выбор цвета кузова">
+                    <button
+                      type="button"
+                      class="swatch-btn active"
+                      data-color-key="white"
+                      role="radio"
+                      aria-checked="true"
+                      aria-label="Перламутровый белый"
+                    >
+                      <span class="swatch-color-circle" style="background-color: var(--swatch-white);"></span>
+                    </button>
+                    <button
+                      type="button"
+                      class="swatch-btn"
+                      data-color-key="black"
+                      role="radio"
+                      aria-checked="false"
+                      aria-label="Чёрный"
+                    >
+                      <span class="swatch-color-circle" style="background-color: var(--swatch-black);"></span>
+                    </button>
+                    <button
+                      type="button"
+                      class="swatch-btn"
+                      data-color-key="silver"
+                      role="radio"
+                      aria-checked="false"
+                      aria-label="Тёмно-серый"
+                    >
+                      <span class="swatch-color-circle" style="background-color: var(--swatch-silver);"></span>
+                    </button>
+                    <button
+                      type="button"
+                      class="swatch-btn"
+                      data-color-key="blue"
+                      role="radio"
+                      aria-checked="false"
+                      aria-label="Тёмно-синий"
+                    >
+                      <span class="swatch-color-circle" style="background-color: var(--swatch-blue);"></span>
+                    </button>
+                    <button
+                      type="button"
+                      class="swatch-btn"
+                      data-color-key="red"
+                      role="radio"
+                      aria-checked="false"
+                      aria-label="Красный"
+                    >
+                      <span class="swatch-color-circle" style="background-color: var(--swatch-red);"></span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Выбор колёсных дисков -->
+                <div>
+                  <h3 class="config-group-title">Колёсные диски</h3>
+                  <div class="options-button-grid" role="radiogroup" aria-label="Выбор колёсных дисков">
+                    <button
+                      type="button"
+                      class="option-btn wheel-option-btn"
+                      data-wheel-name="19″ Aero"
+                      role="radio"
+                      aria-checked="false"
+                    >
+                      <span class="option-btn-title">19″ Aero</span>
+                      <span class="option-btn-sub">Макс. запас хода</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="option-btn wheel-option-btn active"
+                      data-wheel-name="20″ Sport"
+                      role="radio"
+                      aria-checked="true"
+                    >
+                      <span class="option-btn-title">20″ Sport</span>
+                      <span class="option-btn-sub">Баланс комфорта</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="option-btn wheel-option-btn"
+                      data-wheel-name="22″ Performance"
+                      role="radio"
+                      aria-checked="false"
+                    >
+                      <span class="option-btn-title">22″ Performance</span>
+                      <span class="option-btn-sub">Спортивный стиль</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Выбор конфигурации салона -->
+                <div>
+                  <h3 class="config-group-title">Количество мест</h3>
+                  <div class="options-button-grid" role="radiogroup" aria-label="Выбор количества мест">
+                    <button
+                      type="button"
+                      class="option-btn seat-option-btn active"
+                      data-seat-name="5 мест"
+                      role="radio"
+                      aria-checked="true"
+                    >
+                      <span class="option-btn-title">5 мест</span>
+                      <span class="option-btn-sub">Два ряда</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="option-btn seat-option-btn"
+                      data-seat-name="6 мест"
+                      role="radio"
+                      aria-checked="false"
+                    >
+                      <span class="option-btn-title">6 мест</span>
+                      <span class="option-btn-sub">Кресла кап. типа</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="option-btn seat-option-btn"
+                      data-seat-name="7 мест"
+                      role="radio"
+                      aria-checked="false"
+                    >
+                      <span class="option-btn-title">7 мест</span>
+                      <span class="option-btn-sub">Макс. вместимость</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Сводка конфигурации -->
+                <div class="config-summary-card">
+                  <div class="summary-heading">Ваша конфигурация</div>
+                  <div class="summary-list">
+                    <div class="summary-row">
+                      <span class="summary-label">Модель:</span>
+                      <span class="summary-value summary-model-val">Модель X</span>
+                    </div>
+                    <div class="summary-row">
+                      <span class="summary-label">Цвет:</span>
+                      <span class="summary-value summary-color-val">Перламутровый белый</span>
+                    </div>
+                    <div class="summary-row">
+                      <span class="summary-label">Колёса:</span>
+                      <span class="summary-value summary-wheels-val">20″ Sport</span>
+                    </div>
+                    <div class="summary-row">
+                      <span class="summary-label">Количество мест:</span>
+                      <span class="summary-value summary-seats-val">5 мест</span>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn-open-modal-config"
+                    data-open-modal="configurator"
+                    aria-label="Открыть полную панель сборки"
+                  >
+                    СОЗДАТЬ КОНФИГУРАЦИЮ В ОКНЕ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ЭКСТЕРЬЕР И ПОДЪЁМНЫЕ ДВЕРИ (EXTERIOR SECTION)
+             ================================================================== -->
+        <section id="exterior" class="exterior-section" aria-label="Особенности экстерьера">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">Чередующаяся сетка (Зигзаг) с адаптивным реверсом на CSS</span>
+
+            <!-- Блок 1: Аэродинамичный дизайн -->
+            <div class="exterior-feature-row reveal-on-scroll">
+              <div>
+                <p class="section-kicker">СНИЖЕНИЕ СОПРОТИВЛЕНИЯ</p>
+                <h3 class="section-heading-large">АЭРОДИНАМИЧНЫЙ ДИЗАЙН</h3>
+                <p class="section-lead-text">
+                  Коэффициент лобового сопротивления всего 0.24 Cd делает Модель X одним из самых
+                  обтекаемых кроссоверов в мире. Скрытые ручки дверей и оптимизированный силуэт
+                  экономят запас хода на трассе.
+                </p>
+              </div>
+              <div class="exterior-feature-media">
+                <img
+                  src="./assets/images/hero.jpg"
+                  alt="Аэродинамический силуэт Модель X с плавными линиями кузова"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- Блок 2: Адаптивное освещение -->
+            <div class="exterior-feature-row reverse reveal-on-scroll">
+              <div>
+                <p class="section-kicker">ОПТИКА ВЫСОКОЙ ЧЁТКОСТИ</p>
+                <h3 class="section-heading-large">АДАПТИВНОЕ ОСВЕЩЕНИЕ</h3>
+                <p class="section-lead-text">
+                  Матричные светодиодные фары освещают дорогу на сотни метров вперёд,
+                  автоматически затеняя встречный поток и подсвечивая опасные повороты в тёмное
+                  время суток.
+                </p>
+              </div>
+              <div class="exterior-feature-media">
+                <img
+                  src="./assets/images/charging.jpg"
+                  alt="Фары электромобиля и ночная стоянка"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- Блок 3: Подъёмные задние двери -->
+            <div class="exterior-feature-row reveal-on-scroll">
+              <div>
+                <p class="section-kicker">УНИКАЛЬНАЯ КИНЕМАТИКА</p>
+                <h3 class="section-heading-large">ПОДЪЁМНЫЕ ЗАДНИЕ ДВЕРИ</h3>
+                <p class="section-lead-text">
+                  Двухшарнирные двери типа Falcon Wing открываются вверх даже в тесных
+                  парковочных пространствах при расстоянии всего 30 см до соседних автомобилей.
+                </p>
+              </div>
+              <div class="exterior-feature-media">
+                <img
+                  src="./assets/images/exterior-falcon.jpg"
+                  alt="Модель X с поднятыми дверями Falcon Wing"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- Интерактивная демонстрация открывания дверей -->
+            <div class="falcon-interactive-container reveal-on-scroll">
+              <span class="edu-badge" style="display: none;">CSS Transform & Keyframes — аппаратная GPU-анимация створок дверей</span>
+              <h3 class="card-title">Интерактивная кинематика дверей</h3>
+              <p class="section-body-text" style="max-width: 580px;">
+                Нажмите кнопку ниже, чтобы увидеть анимацию подъёма двухшарнирных дверей:
+              </p>
+
+              <!-- SVG демонстрация силуэта автомобиля с открывающимися дверьми -->
+              <svg
+                class="falcon-stage-svg"
+                viewBox="0 0 600 260"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Схема подъёмных дверей автомобиля"
+              >
+                <!-- Контур крыши и кузова -->
+                <path d="M120 200 L200 130 L400 130 L480 200 Z" stroke="#33333b" stroke-width="3" fill="#141418" />
+                <rect x="180" y="200" width="240" height="40" rx="4" fill="#1e1e24" stroke="#444" stroke-width="2" />
+                <!-- Колёса -->
+                <circle cx="160" cy="225" r="28" fill="#0d0d10" stroke="#555" stroke-width="4" />
+                <circle cx="440" cy="225" r="28" fill="#0d0d10" stroke="#555" stroke-width="4" />
+                <!-- Левая подъёмная створка -->
+                <g class="falcon-door-left">
+                  <path d="M210 130 L290 130 L280 195 L220 195 Z" fill="#2d3748" stroke="#60a5fa" stroke-width="3" />
+                  <line x1="220" y1="145" x2="280" y2="145" stroke="#93c5fd" stroke-width="2" />
+                </g>
+                <!-- Правая подъёмная створка -->
+                <g class="falcon-door-right">
+                  <path d="M310 130 L390 130 L380 195 L320 195 Z" fill="#2d3748" stroke="#60a5fa" stroke-width="3" />
+                  <line x1="320" y1="145" x2="380" y2="145" stroke="#93c5fd" stroke-width="2" />
+                </g>
+                <text x="300" y="250" text-anchor="middle" fill="#888" font-size="12">Интерактивный образовательный макет</text>
+              </svg>
+
+              <button
+                type="button"
+                class="falcon-action-btn"
+                aria-expanded="false"
+              >
+                ОТКРЫТЬ ДВЕРИ
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ПРАКТИЧНОСТЬ (UTILITY SECTION)
+             ================================================================== -->
+        <section id="utility" class="utility-section" aria-label="Практичность и вместимость">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">DOM Manipulation — интерактивное переключение режимов объёма багажника</span>
+            <p class="section-kicker">ВМЕСТИТЕЛЬНОСТЬ И ПУТЕШЕСТВИЯ</p>
+            <h2 class="section-heading-large">ГОТОВ К ЛЮБОМУ ПУТЕШЕСТВИЮ</h2>
+
+            <div class="utility-grid">
+              <!-- Левая часть: Интерактивный багажный отсек -->
+              <div class="cargo-visualization reveal-on-scroll">
+                <div class="cargo-toggle-control" role="group" aria-label="Режим багажного отделения">
+                  <button
+                    type="button"
+                    class="cargo-toggle-btn active"
+                    data-cargo-mode="standard"
+                  >
+                    СТАНДАРТ
+                  </button>
+                  <button
+                    type="button"
+                    class="cargo-toggle-btn"
+                    data-cargo-mode="expanded"
+                  >
+                    РАСШИРЕННЫЙ
+                  </button>
+                </div>
+
+                <div class="cargo-diagram-container">
+                  <svg width="320" height="180" viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="30" width="280" height="120" rx="8" fill="#18181d" stroke="#333" stroke-width="2" />
+                    <rect
+                      class="cargo-diagram-rect"
+                      x="40"
+                      y="50"
+                      width="240"
+                      height="80"
+                      rx="4"
+                      fill="#3b82f6"
+                      opacity="0.25"
+                      stroke="#60a5fa"
+                      stroke-width="2"
+                      style="transition: transform 0.4s var(--ease-out-expo);"
+                    />
+                    <text x="160" y="95" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">
+                      Грузовой объём
+                    </text>
+                  </svg>
+                </div>
+
+                <div class="cargo-metric-callout">1 050 л</div>
+                <div class="cargo-metric-sub">Стандартное багажное отделение за вторым рядом</div>
+              </div>
+
+              <!-- Правая часть: Список характеристик практичности -->
+              <div class="utility-features-list reveal-on-scroll delay-100">
+                <div class="utility-feature-item">
+                  <h3 class="utility-feature-item-title">Объём багажника</h3>
+                  <p class="utility-feature-item-desc">
+                    До 2 614 литров полезного объёма при сложенных сиденьях второго и третьего ряда,
+                    включая дополнительный передний багажник (Frunk).
+                  </p>
+                </div>
+
+                <div class="utility-feature-item">
+                  <h3 class="utility-feature-item-title">Буксировка</h3>
+                  <p class="utility-feature-item-desc">
+                    Тяговая способность до 2 250 кг позволяет перевозить жилые прицепы, катера и
+                    спортивное снаряжение без снижения управляемости.
+                  </p>
+                </div>
+
+                <div class="utility-feature-item">
+                  <h3 class="utility-feature-item-title">Гибкая конфигурация салона</h3>
+                  <p class="utility-feature-item-desc">
+                    Возможность выбора 5, 6 или 7 посадочных мест с независимым складыванием каждого
+                    кресла в ровный пол.
+                  </p>
+                </div>
+
+                <div class="utility-feature-item">
+                  <h3 class="utility-feature-item-title">Дополнительное пространство</h3>
+                  <p class="utility-feature-item-desc">
+                    Глубокая ниша под полом багажника и просторный передний отсек для хранения
+                    кабелей зарядки и багажа.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ЗАРЯДКА (CHARGING SECTION)
+             ================================================================== -->
+        <section id="charging" class="charging-section" aria-label="Зарядка электромобиля">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">requestAnimationFrame — плавная симуляция приращения процентов зарядки</span>
+            <div class="charging-container-grid">
+              <!-- Левая колонка: Текстовое описание -->
+              <div class="reveal-on-scroll">
+                <p class="section-kicker">СЕТЬ БЫСТРОЙ ЗАРЯДКИ</p>
+                <h2 class="section-heading-large">ДВИГАЙТЕСЬ ДАЛЬШЕ</h2>
+                <p class="section-lead-text">
+                  Пополняйте до 200 миль запаса хода всего за 15 минут на станциях сверхбыстрой
+                  зарядки. Интеллектуальная система предварительно прогревает батарею для
+                  максимальной скорости приёма энергии.
+                </p>
+                <p class="section-body-text">
+                  Встроенная навигация автоматически рассчитывает оптимальный маршрут с учётом
+                  остатка заряда, перепада высот и очередей на станциях.
+                </p>
+              </div>
+
+              <!-- Правая колонка: Интерактивный симулятор зарядки -->
+              <div class="charging-simulator-card reveal-on-scroll delay-100">
+                <h3 class="card-title" style="margin-bottom: 2px;">Симулятор ультрабыстрой зарядки</h3>
+                <p class="section-body-text" style="font-size: 13px;">Демонстрация пополнения от 0% до 80%:</p>
+
+                <div class="battery-gauge-wrapper">
+                  <svg class="battery-circle-svg" viewBox="0 0 200 200" aria-hidden="true">
+                    <circle class="battery-circle-bg" cx="100" cy="100" r="90" />
+                    <circle class="battery-circle-bar" cx="100" cy="100" r="90" />
+                  </svg>
+                  <div class="battery-center-text">
+                    <span class="battery-percentage">0%</span>
+                    <span class="battery-range-add">+0 миль</span>
+                  </div>
+                </div>
+
+                <div class="charging-controls-row">
+                  <button type="button" class="charging-control-btn primary" data-charge-action="start">
+                    Начать зарядку
+                  </button>
+                  <button type="button" class="charging-control-btn" data-charge-action="pause">
+                    Пауза
+                  </button>
+                  <button type="button" class="charging-control-btn" data-charge-action="reset">
+                    Сбросить
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ТЕХНОЛОГИИ (TECHNOLOGY SECTION)
+             ================================================================== -->
+        <section id="technology" class="tech-section" aria-label="Технологии и электроника">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">SVG иконки + CSS Grid 3×2 с адаптивной перестройкой в единый столбец</span>
+            <p class="section-kicker">ИННОВАЦИОННАЯ ЭКОСИСТЕМА</p>
+            <h2 class="section-heading-large">ПЕРЕДОВЫЕ ТЕХНОЛОГИИ</h2>
+
+            <div class="tech-cards-grid">
+              <article class="tech-card reveal-on-scroll">
+                <svg class="tech-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                </svg>
+                <h3 class="tech-card-title">Системы помощи водителю</h3>
+                <p class="tech-card-desc">
+                  Круговой обзор на 360 градусов с помощью оптических камер высокого разрешения и
+                  нейронной обработки дорожной обстановки в реальном времени.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-on-scroll delay-100">
+                <svg class="tech-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                  <line x1="12" y1="20" x2="12.01" y2="20" />
+                </svg>
+                <h3 class="tech-card-title">Подключённый автомобиль</h3>
+                <p class="tech-card-desc">
+                  Постоянная связь с защищённым облаком, удалённый контроль климата и мониторинг
+                  состояния через мобильное приложение.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-on-scroll delay-200">
+                <svg class="tech-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <h3 class="tech-card-title">Обновления через интернет</h3>
+                <p class="tech-card-desc">
+                  Беспроводные обновления прошивки (OTA) регулярно расширяют возможности
+                  автомобиля, добавляя новые функции и повышая безопасность.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-on-scroll delay-300">
+                <svg class="tech-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                  <line x1="12" y1="18" x2="12.01" y2="18" />
+                </svg>
+                <h3 class="tech-card-title">Интеграция со смартфоном</h3>
+                <p class="tech-card-desc">
+                  Смартфон как цифровой ключ: автоматическое отпирание дверей при приближении
+                  владельца и персонализированная настройка сидений и зеркал.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-on-scroll delay-400">
+                <svg class="tech-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                  <line x1="8" y1="2" x2="8" y2="18" />
+                  <line x1="16" y1="6" x2="16" y2="22" />
+                </svg>
+                <h3 class="tech-card-title">Навигация</h3>
+                <p class="tech-card-desc">
+                  Маршрутизация с учётом реального трафика, доступности зарядных терминалов и
+                  прогнозирования расхода батареи с точностью до 1%.
+                </p>
+              </article>
+
+              <article class="tech-card reveal-on-scroll delay-500">
+                <svg class="tech-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                <h3 class="tech-card-title">Развлечения</h3>
+                <p class="tech-card-desc">
+                  Мощный бортовой компьютер с производительностью 10 терафлопс для современных
+                  видеоигр, потокового видео и аудио высокого разрешения.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             БЕЗОПАСНОСТЬ (SAFETY SECTION)
+             ================================================================== -->
+        <section id="safety" class="safety-section" aria-label="Пассивная и активная безопасность">
+          <div class="container">
+            <span class="edu-badge" style="display: none;">Семантические теги article и доступные заголовки h3</span>
+            <p class="section-kicker">ЗАЩИТА ЖИЗНИ И ЗДОРОВЬЯ</p>
+            <h2 class="section-heading-large">СОЗДАН ДЛЯ БЕЗОПАСНОСТИ</h2>
+
+            <div class="safety-blocks-grid">
+              <article class="safety-block reveal-on-scroll">
+                <h3 class="safety-block-title">Прочная конструкция</h3>
+                <p class="safety-block-desc">
+                  Каркас безопасности из высокопрочной стали и алюминия эффективно поглощает
+                  энергию фронтальных и боковых ударов, минимизируя деформацию обитаемого отсека.
+                </p>
+              </article>
+
+              <article class="safety-block reveal-on-scroll delay-100">
+                <h3 class="safety-block-title">Низкий центр тяжести</h3>
+                <p class="safety-block-desc">
+                  Тяжёлый тяговый аккумулятор расположен в днище между осями, что обеспечивает
+                  рекордно низкий для кроссоверов риск опрокидывания при резких манёврах.
+                </p>
+              </article>
+
+              <article class="safety-block reveal-on-scroll delay-200">
+                <h3 class="safety-block-title">Современные системы безопасности</h3>
+                <p class="safety-block-desc">
+                  Автоматическое экстренное торможение, мониторинг слепых зон и превентивное
+                  натяжение ремней непрерывно оберегают водителя и всех пассажиров.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             ФИНАЛЬНЫЙ ПРИЗЫВ К ДЕЙСТВИЮ (FINAL CTA)
+             ================================================================== -->
+        <section class="cta-section" aria-label="Финальное действие">
+          <div class="cta-content">
+            <span class="edu-badge" style="display: none;">Плавный скролл window.scrollTo на нативном JavaScript</span>
+            <h2 class="cta-heading">ГОТОВЫ К НОВОМУ ПУТЕШЕСТВИЮ?</h2>
+            <div class="cta-buttons-row">
+              <button
+                type="button"
+                class="btn-secondary"
+                data-scroll-top
+                aria-label="Прокрутить страницу к самому началу"
+              >
+                ВЕРНУТЬСЯ К НАЧАЛУ
+              </button>
+              <button
+                type="button"
+                class="btn-primary"
+                data-open-modal="configurator"
+                aria-label="Открыть окно сборки конфигурации"
+              >
+                СОЗДАТЬ КОНФИГУРАЦИЮ
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ==================================================================
+           МОДАЛЬНОЕ ОКНО КОНФИГУРАТОРА (CONFIGURATOR MODAL)
+           ================================================================== -->
+      <div
+        class="modal-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="modalConfigTitle"
+      >
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2 id="modalConfigTitle" class="modal-title">НАСТРОЙТЕ СВОЙ АВТОМОБИЛЬ</h2>
+            <button type="button" class="modal-close-btn" aria-label="Закрыть окно конфигуратора">✕</button>
+          </div>
+
+          <!-- Основное тело модального окна -->
+          <div class="modal-body">
+            <div class="modal-controls-area">
+              <span class="edu-badge" style="display: none;">JavaScript — синхронизация данных модального окна с глобальным объектом</span>
+
+              <!-- Выбор цвета -->
+              <div style="margin-bottom: 32px;">
+                <h3 class="config-group-title">Цвет кузова</h3>
+                <p class="config-group-subtitle">
+                  Текущий выбор: <strong class="active-color-name-display">Перламутровый белый</strong>
+                </p>
+                <div class="swatches-row">
+                  <button type="button" class="swatch-btn active" data-color-key="white" aria-label="Перламутровый белый">
+                    <span class="swatch-color-circle" style="background-color: var(--swatch-white);"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color-key="black" aria-label="Чёрный">
+                    <span class="swatch-color-circle" style="background-color: var(--swatch-black);"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color-key="silver" aria-label="Тёмно-серый">
+                    <span class="swatch-color-circle" style="background-color: var(--swatch-silver);"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color-key="blue" aria-label="Тёмно-синий">
+                    <span class="swatch-color-circle" style="background-color: var(--swatch-blue);"></span>
+                  </button>
+                  <button type="button" class="swatch-btn" data-color-key="red" aria-label="Красный">
+                    <span class="swatch-color-circle" style="background-color: var(--swatch-red);"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Выбор колёс -->
+              <div style="margin-bottom: 32px;">
+                <h3 class="config-group-title">Колёсные диски</h3>
+                <div class="options-button-grid">
+                  <button type="button" class="option-btn wheel-option-btn" data-wheel-name="19″ Aero">
+                    <span class="option-btn-title">19″ Aero</span>
+                    <span class="option-btn-sub">Запас хода</span>
+                  </button>
+                  <button type="button" class="option-btn wheel-option-btn active" data-wheel-name="20″ Sport">
+                    <span class="option-btn-title">20″ Sport</span>
+                    <span class="option-btn-sub">Комфорт</span>
+                  </button>
+                  <button type="button" class="option-btn wheel-option-btn" data-wheel-name="22″ Performance">
+                    <span class="option-btn-title">22″ Performance</span>
+                    <span class="option-btn-sub">Динамика</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Выбор мест -->
+              <div>
+                <h3 class="config-group-title">Количество мест</h3>
+                <div class="options-button-grid">
+                  <button type="button" class="option-btn seat-option-btn active" data-seat-name="5 мест">
+                    <span class="option-btn-title">5 мест</span>
+                    <span class="option-btn-sub">Базовый салон</span>
+                  </button>
+                  <button type="button" class="option-btn seat-option-btn" data-seat-name="6 мест">
+                    <span class="option-btn-title">6 мест</span>
+                    <span class="option-btn-sub">Раздельные кресла</span>
+                  </button>
+                  <button type="button" class="option-btn seat-option-btn" data-seat-name="7 мест">
+                    <span class="option-btn-title">7 мест</span>
+                    <span class="option-btn-sub">3 ряда сидений</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Правая панель: Сводка -->
+            <div class="modal-summary-panel">
+              <div>
+                <div class="summary-heading">Параметры комплектации</div>
+                <div class="summary-list">
+                  <div class="summary-row">
+                    <span class="summary-label">Модель:</span>
+                    <span class="summary-value summary-model-val">Модель X</span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="summary-label">Цвет:</span>
+                    <span class="summary-value summary-color-val">Перламутровый белый</span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="summary-label">Колёса:</span>
+                    <span class="summary-value summary-wheels-val">20″ Sport</span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="summary-label">Количество мест:</span>
+                    <span class="summary-value summary-seats-val">5 мест</span>
+                  </div>
+                </div>
+              </div>
+              <p style="font-size: 12px; color: var(--color-text-muted); margin-top: 24px;">
+                Конфигурация формируется исключительно в образовательных целях.
+              </p>
+            </div>
+          </div>
+
+          <!-- Экран успешного завершения -->
+          <div class="modal-success-state">
+            <h3 class="modal-success-title">Конфигурация создана</h3>
+            <p class="modal-success-desc">
+              Это демонстрационная функция образовательного проекта. Реальная покупка автомобиля
+              недоступна. Ваши выбранные параметры успешно зафиксированы в состоянии приложения.
+            </p>
+            <button type="button" class="btn-primary btn-close-success">ЗАКРЫТЬ</button>
+          </div>
+
+          <div class="modal-footer">
+            <div class="modal-btn-row">
+              <button type="button" class="modal-btn back">НАЗАД</button>
+              <button type="button" class="modal-btn reset">СБРОСИТЬ</button>
+            </div>
+            <button type="button" class="modal-btn finish">ГОТОВО</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           ПОДВАЛ (FOOTER)
+           ================================================================== -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+          <!-- Обязательный юридический и образовательный дисклеймер -->
+          <div class="footer-disclaimer-box">
+            <p class="footer-disclaimer-text">
+              <strong>Образовательный проект.</strong> Сайт создан исключительно в учебных целях и не связан
+              с Tesla, Inc., не является официальным сайтом Tesla и не поддерживается компанией Tesla.
+            </p>
+            <p class="footer-disclaimer-text" style="margin-top: 8px;">
+              Educational Concept — This website is an independent learning project and is not
+              affiliated with, endorsed by, or sponsored by Tesla, Inc.
+            </p>
+          </div>
+
+          <div class="footer-top-grid">
+            <div>
+              <div class="footer-column-title">О проекте</div>
+              <p style="font-size: 13px; line-height: 1.6; color: var(--color-text-muted);">
+                Учебный веб-сайт, демонстрирующий премиальную вёрстку, семантику HTML5, модульный
+                JavaScript ES6+, адаптивные сетки CSS Grid/Flexbox и оптимизированные аппаратные
+                анимации.
+              </p>
+            </div>
+
+            <div>
+              <div class="footer-column-title">Технологии</div>
+              <ul class="footer-links-list">
+                <li><span class="footer-link">Семантический HTML5</span></li>
+                <li><span class="footer-link">CSS3 Variables & Grid</span></li>
+                <li><span class="footer-link">Модульный JavaScript ES6+</span></li>
+                <li><span class="footer-link">IntersectionObserver API</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="footer-column-title">Доступность (A11y)</div>
+              <ul class="footer-links-list">
+                <li><span class="footer-link">Поддержка клавиатуры (Tab, Esc)</span></li>
+                <li><span class="footer-link">Контрастность по WCAG AA</span></li>
+                <li><span class="footer-link">Атрибуты ARIA</span></li>
+                <li><span class="footer-link">prefers-reduced-motion</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="footer-column-title">Конфиденциальность</div>
+              <p style="font-size: 13px; line-height: 1.6; color: var(--color-text-muted);">
+                Сайт не собирает персональные данные, файлы cookie или платёжную информацию.
+              </p>
+            </div>
+          </div>
+
+          <div class="footer-bottom-row">
+            <span>Разработано на чистом HTML, CSS и JavaScript.</span>
+            <span>Модель X — Образовательный концепт © 2026</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Подключение модульного JavaScript -->
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

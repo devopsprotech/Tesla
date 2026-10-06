@@ -1,0 +1,83 @@
+/* ==========================================================================
+   VARIABLES.CSS — Глобальные переменные и дизайн-токены
+   Образовательный проект: Модель X
+   ========================================================================== */
+
+:root {
+  /* Типографика */
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Палитра (Премиальная автомобильная эстетика: чёрный, белый, графитовый) */
+  --color-bg: #000000;
+  --color-bg-dark: #0a0a0c;
+  --color-bg-surface: #141417;
+  --color-bg-surface-elevated: #1e1e24;
+  --color-bg-light: #f5f5f7;
+  --color-bg-light-surface: #ffffff;
+
+  --color-text-main: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.72);
+  --color-text-muted: rgba(255, 255, 255, 0.48);
+  --color-text-dark-main: #111113;
+  --color-text-dark-secondary: #515158;
+  --color-text-dark-muted: #888892;
+
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-light: rgba(0, 0, 0, 0.08);
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-accent-subtle: rgba(59, 130, 246, 0.15);
+  --color-success: #10b981;
+  --color-tesla-red: #e82127;
+
+  /* Автомобильные цвета для конфигуратора */
+  --swatch-white: #f2f2f4;
+  --swatch-black: #121214;
+  --swatch-silver: #4a4d53;
+  --swatch-blue: #1c2e4a;
+  --swatch-red: #9e1319;
+
+  /* Пространственная сетка и отступы */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+  --spacing-5xl: 128px;
+
+  /* Скругления углов */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Эффекты размытия и стекла */
+  --glass-bg-dark: rgba(10, 10, 12, 0.72);
+  --glass-bg-light: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --backdrop-blur: blur(20px);
+  --backdrop-blur-sm: blur(10px);
+
+  /* Тени */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+
+  /* Переходы и анимации */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Высота шапки */
+  --header-height: 64px;
+  --container-max-width: 1360px;
+}
